@@ -1,0 +1,30 @@
+{
+    "name": "dbus",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "types": "src/index",
+    "scripts": {
+        "build": "tsc --build --force --verbose",
+        "dev": "yarn start-dev",
+        "start-dev": "run-p start-dev:*",
+        "start-dev:build": "yarn build --watch",
+        "start-dev:run": "nodemon --inspect=0.0.0.0:4001 -r source-map-support/register ./build/index.js"
+    },
+    "dependencies": {
+        "@types/events": "^3.0.3",
+        "@types/node": "12",
+        "dbus": "file:../node-dbus-old",
+        "dbus-next": "^0.10.2",
+        "events": "^3.3.0",
+        "machine-id": "^1.0.0",
+        "typescript": "^5.4.5",
+        "x11": "^2.3.0"
+    },
+    "devDependencies": {
+        "@types/dbus": "^1.0.9",
+        "nodemon": "^3.1.0",
+        "npm-run-all": "^4.1.5",
+        "source-map-support": "^0.5.21"
+    }
+}
